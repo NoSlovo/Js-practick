@@ -1,37 +1,15 @@
-let inputName = document.querySelector('#name');
-let inputPassword = document.querySelector('#pasword');
-let button = document.querySelector('.button');
 
-button.onclick = function () {
+fetch('http://api.openweathermap.org/data/2.5/weather?q=london,uk&appid=9a2919f2b8a6e6e2ae9b376a53169a61')
+.then(function (resp) { return resp.json()})
+.then(function (data) {
+    console.log(data);
+    document.querySelector('.city-name').textContent = data.name;  
+    document.querySelector('.price').innerHTML = Math.round((data.main.temp) - 290) + '&deg';
+    document.querySelector('.disclaimer').textContent = data.weather[0]['description'];
+})
+.catch(function () {
+    
+})
+ 
 
-    document.querySelector('#name').value;
-    let form = document.querySelector('form');
-    if (inputName.value == 0) 
-    {
-        event.preventDefault();
-        document.querySelector("h2").innerHTML = "Заполните поля Имя"
-    } 
-    else if (inputName.value != " "){
 
-        if (inputName.value == "Admin"){
-
-        }else {
-            document.querySelector("h2").innerHTML = "Не правльный логин"
-            event.preventDefault();
-            
-        }
-    }
-
-    if(inputPassword.value == 0){
-        event.preventDefault();
-        document.querySelector("h2").innerHTML = "Заполните поля Пароля";
-    }else if(inputPassword.value != " "){
-
-        if (inputPassword.value == "Block"){
-
-        }else{
-            document.querySelector("h2").innerHTML = "Не правльный Пороль"
-            event.preventDefault();
-        }
-    }
-}
