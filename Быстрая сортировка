@@ -7,7 +7,6 @@ const array = [-772, 3, -888, 275, 666, 469, -315, 675, -206, 917, 510, -62, -13
     -918, 189, 671, -287];
 
 
-
 quicksort(array);
 
 
@@ -17,8 +16,11 @@ const newArray = array.sort((a,b)=> a - b)
 
 
 function quicksort (array) { 
+    if(array.length < 2){
+        return array
+    }
     const index = Math.floor(Math.random() * array.length) // <-- Случайный элемент массива
-    const currentItem = array[index]  // <-- контрольный элемент
+    const currentItem = array[index]  // <-- случайное  середина значения
 
     const more = [] // <-- массив больше среднего значения
     const less = [] // <-- массив меньше среднего значения
@@ -36,9 +38,11 @@ function quicksort (array) {
         }
     }
 
-    console.log({
+    return [ // <--объеденяем массивы
+        ...quicksort(less),
         currentItem,
-        more,
-        less
-    })
+        ...quicksort(more)
+    ]
  }
+
+ console.log(quicksort(array));
