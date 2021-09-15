@@ -18,7 +18,7 @@ const newArray = array.sort((a,b)=> a - b)
 
 function quicksort (array) { 
     const index = Math.floor(Math.random() * array.length) // <-- Случайный элемент массива
-    const currentItem = array[index]  // <-- случайное  середина значения
+    const currentItem = array[index]  // <-- контрольный элемент
 
     const more = [] // <-- массив больше среднего значения
     const less = [] // <-- массив меньше среднего значения
