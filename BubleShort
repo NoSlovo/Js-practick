@@ -6,8 +6,8 @@ const array = [-772, 3, -888, 275, 666, 469, -315, 675, -206, 917, 510, -62, -13
     -781, 260, 914, 539, 744, 403, -84, -695, 193, -782, 923, 673, -402, -419, 41, 546, -892, 133, -756, 242, -357, 434, -331, -991, -384, 
     -918, 189, 671, -287];
 function bubleShort(arr){
-    for (let i = 0; i < arr.length;i++){
-    for (let i = 0 ; i < arr.length -1;i++){
+    for (let n = 0; n < arr.length;n++){
+    for (let i = 0 ; i < arr.length -1 - n;i++){
         if(arr[i] > arr[i + 1]){
             const buff = arr[i];
             arr[i] = arr[i + 1];
@@ -17,3 +17,5 @@ function bubleShort(arr){
 }
 console.log(arr);
 }
+
+bubleShort(array);
