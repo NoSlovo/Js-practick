@@ -1,0 +1,31 @@
+.input{
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    height: 22px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.conteiner{
+display: grid;
+width: 250px;
+}
+
+.buttons{
+    display: grid;
+    width: 230px;
+    margin-left: 16px;
+    text-align: center;
+    grid-template-columns: repeat(3, 2fr);
+    grid-auto-rows: 50px;
+    background-color: rgb(4, 16, 87);
+    color: white;
+    font-size: 20px;
+    
+}
+
+.item{
+    padding-top: 12px ;
+    border: 1px solid rgb(0, 0, 0);
+}
